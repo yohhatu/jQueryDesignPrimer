@@ -8,25 +8,25 @@
 <title>TabPanel(chapter03-05-sample1)</title>
 <script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
 <style type="text/css">
-body #container {
+body {
 	background: #777;
 	color: white;
 }
 
-#container a {
+a {
 	color: #00CCFF
 }
 
-#container h1 {
+h1 {
 	width: 80%;
 	margin: 10px auto;
 }
 
-#container p {
-	color: #00CCFF
+p {
+	margin: 10px 10%;
 }
 
-#container span.tooltip {
+span.tooltip {
 	line-height: 1.5;
 	color: white;
 	width: 200px;
@@ -35,16 +35,36 @@ body #container {
 	padding: 1em;
 	font-size: small;
 }
+
+#back_to_top{
+	margin: 10px 10%;
+}
 </style>
 <script type "text/javascript">
+$(function() {
+	$("span.tooltip").css({
+		opacity:"0.9",
+		position:"absolute",
+		display:"none"
+	});
+
+	$("a").mouseover(function() {
+		$("span.tooltip").fadeIn();
+	}).mouseout(function() {
+		$("span.tooltip").fadeOut();
+	}).mousemove(function() {
+		$("span.tooltip").css( {
+			"top":e.pageY+10+"px",
+			"left":e.pageX+10+"px"
+		});
+	});
+});
+
 </script>
 </head>
 <body>
-	<a href="../index.html">Topに戻る</a>
-	<div id="container">
 		<h1>tooltip sample</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed quam ac risus auctor pulvinar. Nullam tellus lorem, volutpat sit amet eleifend quis, semper pellentesque nunc. Aliquam eu tortor nec nisl suscipit vehicula et eu sapien. Maecenas at pretium diam. Proin non luctus diam. Pellentesque risus nisi, scelerisque eu ultricies quis, <a href="http://ascii.jp/elem/000/000/438/438206/">tooltip sample</a> <span class="tooltip">これはASCII.jpの<br /><strong>Web制作の現場で使えるjQuery<br />UIデザイン入門</strong><br />のサンプルプログラムです</span>luctus rhoncus dui. Proin pharetra aliquet justo, vel scelerisque lorem scelerisque eget. Praesent pharetra magna sit amet diam sagittis ac dictum nunc imperdiet. Pellentesque posuere vulputate fermentum. Vivamus fringilla commodo elit, in ornare libero imperdiet sed.</p>
-	</div>
-
+		<a id="back_to_top" href="../index.html">Topに戻る</a>
 </body>
 </html>
