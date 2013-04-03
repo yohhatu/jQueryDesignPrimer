@@ -17,19 +17,18 @@ p {
 	margin: 10px 10%;
 }
 
-p tooltip {
+p.tooltip {
 	line-height: 1.5;
 	color: white;
 	margin: 0;
-	widows: 185px;
+	width: 185px;
 	height: 86px;
 	position: absolute;
 	padding: 10px 20px 20px 10px;
 	background: url("images/tooltip.png");
 	font-size: small;
 }
-
-* html p tooltip {
+* html p.tooltip {
 	background: none;
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/tooltip.png',sizingMethod='scale');
 }
@@ -39,12 +38,25 @@ p tooltip {
 
 </style>
 <script type "text/javascript">
+$(function() {
+	$("p.tooltip").hide();
+	$("a.tooltip").mouseover(function() {
+		$("p.tooltip").show().css({
+			"top":$(this).offset().top-20+"px",
+			"left":$(this).offset().left+$(this).width()+10+"px",
+		});
+	}).mouseout(function() {
+		setTimeout(function() {
+			$("p.tooltip").hide();
+		},3000);
+	});
+});
 </script>
 </head>
 <body>
 <a id="back_to_top" href="../index.html">Topに戻る</a>
 		<h1>tooltip sample</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed quam ac risus auctor pulvinar. Nullam tellus lorem, volutpat sit amet eleifend quis, semper pellentesque nunc. Aliquam eu tortor nec nisl suscipit vehicula et eu sapien. Maecenas at pretium diam. Proin non luctus diam. Pellentesque risus nisi, scelerisque eu ultricies quis, <a href="http://ascii.jp/elem/000/000/438/438206/">tooltip sample</a> luctus rhoncus dui. Proin pharetra aliquet justo, vel scelerisque lorem scelerisque eget. Praesent pharetra magna sit amet diam sagittis ac dictum nunc imperdiet. Pellentesque posuere vulputate fermentum. Vivamus fringilla commodo elit, in ornare libero imperdiet sed.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed quam ac risus auctor pulvinar. Nullam tellus lorem, volutpat sit amet eleifend quis, semper pellentesque nunc. Aliquam eu tortor nec nisl suscipit vehicula et eu sapien. Maecenas at pretium diam. Proin non luctus diam. Pellentesque risus nisi, scelerisque eu ultricies quis, <a href="http://ascii.jp/elem/000/000/438/438206/" class="tooltip">tooltip sample</a> luctus rhoncus dui. Proin pharetra aliquet justo, vel scelerisque lorem scelerisque eget. Praesent pharetra magna sit amet diam sagittis ac dictum nunc imperdiet. Pellentesque posuere vulputate fermentum. Vivamus fringilla commodo elit, in ornare libero imperdiet sed.</p>
 
 		<p>Proin adipiscing faucibus felis eget auctor. Duis sed ante turpis. Cras sit amet euismod est. Vivamus tempus nibh sed odio pulvinar nec varius leo dignissim. Morbi nunc dui, rutrum vitae porttitor quis, semper in augue. Maecenas feugiat neque sit amet nisl euismod in imperdiet lorem iaculis. Suspendisse a convallis augue. Fusce faucibus sollicitudin dui, lobortis semper lacus elementum et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ullamcorper ipsum sit amet libero aliquet feugiat. Nulla facilisi. Cras tincidunt convallis felis, sed vulputate lorem blandit eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque tortor leo, dapibus et vulputate in, laoreet sit amet odio. Nulla facilisi. Maecenas sit amet purus eu magna pellentesque sodales. In in velit sit amet sapien pharetra placerat non quis ante. Curabitur nisl tellus, aliquet quis facilisis non, congue eu lectus. Aenean lacinia, magna ut mattis aliquet, nisl augue posuere massa, ac bibendum nisi quam eu est.</p>
 
