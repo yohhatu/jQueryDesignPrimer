@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
  Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<title>StripeTable(chapter03-01-sample7)</title>
-		<script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
-		<script type "text/javascript">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>StripeTable(chapter03-01-sample7)</title>
+<script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
+<script type "text/javascript">
 $(function(){
 	$("th:nth-child(odd)").addClass("odd");
 	$("tr:nth-child(even)").addClass("even");
@@ -24,32 +24,31 @@ $(function(){
 		$("td:nth-child("+($("td").index(this)%$("th").size()+1)+")").removeClass("hover");
 	});
 });
+</script>
+<style type="text/css">
+table{
+	margin:100px auto;
+}
+.odd{
+	background:#444444;
+}
+th{
+	background:#222222;
+	color:white;
+}
+th,td{
+	padding:5px;
+	font-size:small;
+}
+.even{
+	background:#F2F2F2;
+}
+.hover{
+	background:#B2D8FF;
+}
 
-		</script>
-		<style type="text/css">
-		table{
-			margin:100px auto;
-		}
-		.odd{
-			background:#444444;
-		}
-		th{
-			background:#222222;
-			color:white;
-		}
-		th,td{
-			padding:5px;
-			font-size:small;
-		}
-		.even{
-			background:#F2F2F2;
-		}
-		.hover{
-			background:#B2D8FF;
-		}
-
-		</style>
-	</head>
+</style>
+</head>
 	
 	<body>
 		<a href="../index.html">Topに戻る</a>
