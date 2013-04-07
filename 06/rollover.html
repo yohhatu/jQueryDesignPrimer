@@ -18,6 +18,13 @@ img {
 }
 </style>
 <script type "text/javascript">
+$(function() {
+	$("img[src='images/jquery.jpg']").mouseover(function() {
+		$(this).attr("src", "images/jquery_on.jpg");
+	}).mouseout(function() {
+		$(this).attr("src", "images/jquery.jpg");
+	});
+});
 </script>
 </head>
 <body>
