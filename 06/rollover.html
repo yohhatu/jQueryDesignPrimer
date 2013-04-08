@@ -19,10 +19,10 @@ img {
 </style>
 <script type "text/javascript">
 $(function() {
-	$("img[src='images/jquery.jpg']").mouseover(function() {
-		$(this).attr("src", "images/jquery_on.jpg");
+	$("img.rollover").mouseover(function() {
+		$(this).attr("src", $(this).attr("src").replace(/^(.+)(\.[a-z]+)$/, "$1_on$2"));
 	}).mouseout(function() {
-		$(this).attr("src", "images/jquery.jpg");
+		$(this).attr("src", $(this).attr("src").replace(/^(.+)_on(\.[a-z]+)$/, "$1$2"));
 	});
 });
 </script>
@@ -30,10 +30,10 @@ $(function() {
 <body>
 	<a id="back_to_top" href="../index.html">Topに戻る</a>
 	<ul>
-		<li><a href="#"><img src="images/jquery.jpg" alt="jQuery" /></a></li><!--
-		--><li><a href="#"><img src="images/javascript.jpg" alt="javascript" /></a></li><!--
-		--><li><a href="#"><img src="images/css.jpg" alt="css" /></a></li><!--
-		--><li><a href="#"><img src="images/html.jpg" alt="html" /></a></li>
+		<li><a href="#"><img src="images/jquery.jpg" alt="jQuery" class ="rollover"/></a></li><!--
+		--><li><a href="#"><img src="images/javascript.jpg" alt="javascript"  class ="rollover"/></a></li><!--
+		--><li><a href="#"><img src="images/css.jpg" alt="css"  class ="rollover"/></a></li><!--
+		--><li><a href="#"><img src="images/html.jpg" alt="html"  class ="rollover"/></a></li>
 	</ul>
 </body>
 </html>
