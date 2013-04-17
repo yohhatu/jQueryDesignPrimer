@@ -59,6 +59,15 @@ ul.menu:after {
 }
 </style>
 <script type "text/javascript">
+$(function () {
+	$("ul.sub").hide();
+	$("ul.menu li").hover(function() {
+		$("ul:not(:animated)", this).slideDown("fast");
+	},
+	function() {
+		$("ul", this).slideUp("fast");
+	});
+});
 </script>
 </head>
 <body>
