@@ -99,12 +99,17 @@ $(function() {
 
 			//メールアドレスチェック
 			$(this).filter(".mail").each(function() {
-				if($(this).val() && !$(this).val().mtach(/.+@.+\..+/g) {
+				if($(this).val() && !$(this).val().mtach(/.+@.+\..+/g)) {
 					$(this).parent().prepend("<p class='error'メールアドレスの形式が異なります</p>");
 				}
 			});
 
-
+			//メールアドレス確認チェック		
+			$(this).filter(".mail_check").each(function() {
+				if($(this).val() && $(this).val()!=$("input[name="+$(this).attr("name").replace(/^(.+)_check$/, "$1")+"]").val()) {
+					$(this).parent().prepend("<p class='error'メールアドレスと内容が異なります</p>");
+				}
+			});
 		});
 	});
 });
