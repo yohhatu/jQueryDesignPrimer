@@ -76,6 +76,38 @@ dl dd p.error {
 }
 </style>
 <script type "text/javascript">
+$(function() {
+	$("form").submit(function() {
+		//エラー初期化
+		$("p.error").remove();
+		$("dl dd").removeClass("error");
+
+		$(":text,textarea").filter(".validate").each(function() {
+			//必須項目
+			$(this).filter(".required").each(function() {
+				if($(this).val()=="") {
+					$(this).parent().prepend("<p class='error'必須項目です</p>");
+				}
+			});
+
+			//数値チェック
+			$(this).filter(".number").each(function() {
+				if(isNaN$(this).val()) {
+					$(this).parent().prepend("<p class='error'数値のみです</p>");
+				}
+			});
+
+			//メールアドレスチェック
+			$(this).filter(".mail").each(function() {
+				if($(this).val() && !$(this).val().mtach(/.+@.+\..+/g) {
+					$(this).parent().prepend("<p class='error'メールアドレスの形式が異なります</p>");
+				}
+			});
+
+
+		});
+	});
+});
 </script>
 </head>
 <body style="background:darkgray">
