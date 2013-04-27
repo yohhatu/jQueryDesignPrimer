@@ -9,7 +9,7 @@
 <script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
 <style type="text/css">
 #floatWindow {
-	/*display: none;*/
+	display: none;
 	position: absolute;
 	width: 500px;
 	height: 400px;
@@ -51,6 +51,31 @@
 }
 </style>
 <script type "text/javascript">
+$(function() {
+	$("a.open").click(function(){
+		$("#floatWindow").fadeIn("fast");
+		return false;
+	});
+
+	$("#floatWindow a.close").click(function() {
+		$("#floatWindow").fadeOut("fast");
+		return false;
+	});
+
+	$("#floatWindow dl dt").mousedown(function(e) {
+		$("#floatWindow")
+			.data("clickPointX", e.pageX - $("#floatWindow").offset().left)
+			.data("clickPointY", e.pageY - $("#floatWindow").offset().top);
+		$(document).mousemove(function(e) {
+			$("#floatWindow").css( {
+				top:e.pageY - $("#floatWindow").data("clickPointY")+"px",
+				left:e.pageX - $("#floatWindow").data("clickPointX")+"px"
+			});
+		});
+	}).mouseup(function() {
+		$(document).unbind("mousemove");
+	});
+});
 </script>
 </head>
 <body>
