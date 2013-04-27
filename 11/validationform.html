@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+ Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>validationform(chapter03-11-sample1)</title>
+<script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+</style>
+<script type "text/javascript">
+</script>
+</head>
+<body style="background:darkgray">
+	<a id="back_to_top" href="../index.html">Topに戻る</a>
+	<br>
+	<div id="container">
+		<h1>当サイトへのお問い合わせ</h1>
+		<form action="complete.html" method="post">
+			<dl>
+				<dt>お名前<span>※</span></dt>
+				<dd><input type="text" name="name" size="80" class="validate required" /></dd>
+				<dt>フリガナ</dt>
+				<dd><input type="text" name="furi" size="80" /></dd>
+				<dt>郵便番号</dt>
+				<dd><input type="text" name="zip1" size="4" maxlength="4" class="validate number" /> - <input type="text" name="zip2" size="3" maxlength="3" class="validate number" /></dd>
+				<dt>メールアドレス</dt>
+				<dd><input type="text" value="" size="80" name="mail" class="validate mail"/></dd>
+				<dt>メールアドレス(確認)</dt>
+				<dd><input type="text" value="" size="80" name="mail_check" class="validate mail mail_check"/></dd>
+				<dt>性別<span>※</span></dt>
+				<dd>
+					<input type="radio" value="男性" name="gender" id="man" class="validate required" /> <label for="man">男性</label>
+					<input type="radio" value="女性" name="gender" id="woman" /><label for="woman">女性</label>
+				</dd>
+				<dt>どこでこのサイトを知りましたか?<span>※</span></dt>
+				<dd class="checkboxRequired">
+					<input type="checkbox" name="search" id="search" value="検索エンジン" /> <label for="search">検索エンジン</label>
+					<input type="checkbox" name="friend" id="friend" value="知人の紹介" /> <label for="friend">知人の紹介</label>
+					<input type="checkbox" name="mail_magazine" id="mail_magazine" value="メルマガ" /> <label for="mail_magazine">メルマガ</label>
+					<input type="checkbox" name="etc" value="その他" id="etc" class="validate add_text" /> <label for="etc">その他</label>
+					<input type="text" name="etc_text" value=""  />
+				</dd>
+				<dt>お問い合わせ内容<span>※</span></dt>
+				<dd>
+					<textarea id="inquiry" name="inquiry"rows="10" cols="60"class="validate required"></textarea>
+				</dd>
+			</dl>
+			<p><input type="submit" value="送信" /></p>
+		</form>
+	</div>
+</body>
+</html>
