@@ -8,12 +8,63 @@
 <title>floatWindow(chapter03-10-sample1)</title>
 <script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
 <style type="text/css">
+#floatWindow {
+	/*display: none;*/
+	position: absolute;
+	width: 500px;
+	height: 400px;
+	top: 100px;
+	left: 100px;
+}
 
+#floatWindow a.close {
+	position: absolute;
+	right: 20px;
+	top: 1px;
+}
+
+#floatWindow a.close img {
+	border: none;
+}
+
+#floatWindow dl {
+	width: 100%;
+	height: 100%;
+	background: url("images/floatWindow.png");
+	margin: 0;
+}
+
+#floatWindow dl dt {
+	height: 25px;
+	line-height: 25px;
+	text-indent: 1em;
+	color: white;
+	font-weight: bold;
+	cursor: move;
+}
+
+#floatWindow dl dd {
+	margin: 0;
+	padding: 2em;
+	line-height: 1.5;
+	text-indent: 1em;
+}
 </style>
 <script type "text/javascript">
 </script>
 </head>
 <body>
 	<a id="back_to_top" href="../index.html">Topに戻る</a>
+	<br>
+	<a href="#floatWindow" class="open">フローティングウィンドウの表示</a>
+
+	<div id="floatWindow">
+		<a href="floatWindow.html" class="close"><img src="./images/close.png" alt="閉じる" /></a>
+		<dl>
+			<dt>jQueryによるフローティングウィンドウの作成</dt>
+			<dd>サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・サンプルテキスト・</dd>
+		</dl>
+	</div>
+
 </body>
 </html>
